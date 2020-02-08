@@ -1,8 +1,8 @@
 
 source("https://raw.githubusercontent.com/izeh/m/master/m.r")
 
-dat <- data.frame(C1 = c(1, 1, 1, 1, 1, 1, 1, 1, 0, 0),
-                  C2 = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+dat <- data.frame(Coder1 = c(1, 1, 1, 1, 1, 1, 1, 1, 0, 0),
+                  Coder2 = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
 
 lst <- lapply(0:8, function(x) {dat[0:x, ] <- 0; dat })
 ESL <- sapply(lst, sum)
