@@ -10,7 +10,6 @@ EFL <- sum(lengths(dat)) - ESL
 
 inter <- sapply(lst, irr)
 
-
 plot(1:9, inter[1,], type = "b", ylim = c(min(inter[1,]),  0.7), ylab = "Kappa", panel.f = abline(h = 0, col = 8), xaxt = "n", yaxt = "n",
      xlab = "ESL:EFL Frequency", font.lab = 2, pch = 19, las = 1, mgp = c(1.5, .55, 0), padj = .4, cex.axis = .7, cex.lab = .7)
 axis(1, at = 1:9, labels = paste0("(", ESL, ":", EFL, ")"), cex.axis = .7, mgp = c(1, .3, 0))
