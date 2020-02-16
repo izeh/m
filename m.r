@@ -4739,9 +4739,7 @@ interrate <- function(..., nsim = 1e3, level = .95, useNA = "ifany", na.rm = FAL
   
   r <- lapply(r, as.data.frame)
   
-  arg <- formalArgs(d.prepos)
-  
-  ar <- arg[-c(2, 22)]
+  ar <- formalArgs(d.prepos)[-c(2, 22)]
   
   r <- full.clean(r, ar, all)
   
@@ -4755,7 +4753,7 @@ interrate <- function(..., nsim = 1e3, level = .95, useNA = "ifany", na.rm = FAL
   
   r <- lapply(r, function(x) do.call(rbind, c(split(x, x$study.name), make.row.names = FALSE)))
   
-  drop <- trimws(drop)                
+  drop <- trimws(drop)              
   drop <- setdiff(drop, "study.name")
   
   if(!is.null(drop) & length(drop) != 0) r <- drop.col(r, drop)   
@@ -4788,7 +4786,7 @@ interrate <- function(..., nsim = 1e3, level = .95, useNA = "ifany", na.rm = FAL
   
   dot.names <- if(all) com.names else com.names[!com.names %in% ar]
   
-  if(length(dot.names) == 0) stop("No 2 raters detected OR no two variables/moderators names match.", call. = FALSE)
+  if(length(dot.names) == 0) stop("No 2 raters detected OR no two moderators names match.", call. = FALSE)
   
   if(n.df >= 2) { 
     
@@ -4815,10 +4813,7 @@ interrate <- function(..., nsim = 1e3, level = .95, useNA = "ifany", na.rm = FAL
   
   exclude <- trimws(group.level)
   
-  a <- length(exclude)
-  b <- length(st.level)
-  
-  st.level <- setdiff(if(a > b) exclude else st.level, if(a < b) exclude else st.level)
+  st.level <- st.level[!st.level %in% exclude]
   
   L <- split.default(r[names(r) %in% dot.names], names(r)[names(r) %in% dot.names])
   
