@@ -7,7 +7,7 @@ x <- as.numeric(names(y))
 
 plot(x, y, xlim = c(-.2, 4.2), ylim = c(0, .58), lend = 1, lwd = 10, 
      ylab = "Percentage of Use", xlab = "Type of IRR", font.lab = 2, 
-     xaxt = "n", yaxt ="n", panel.f = abline(h = 0, col = 8), main = NA, type = "h", 
+     xaxt = "n", yaxt ="n", panel.f = abline(h = 0, col = 8), type = "h", 
      panel.l = axis(2, at = at <- axTicks(2), labels = paste0(at*1e2, "%"), las = 1))
 
 text(0:4, y, paste0(round(y, 4)*1e2, "%"), font = 2, pos = 3, xpd = NA, col = 4)
