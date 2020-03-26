@@ -1,5 +1,3 @@
-
-
 # IRR Reporting in L2 Meta-Analyses (2014-2019):
 
 i <- read.csv("https://raw.githubusercontent.com/izeh/m/master/L2.csv")$IRR
